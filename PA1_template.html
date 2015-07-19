@@ -60,7 +60,8 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <h2>Loading and preprocessing the data</h2>
 <div id="load-the-data" class="section level4">
 <h4>1. Load the data</h4>
-<pre class="r"><code>activity &lt;- read.csv(&quot;activity.csv&quot;, header=TRUE, sep=&quot;,&quot;, na.string=&quot;NA&quot;)</code></pre>
+<pre class="r"><code>unzip(&quot;repdata_data_activity.zip&quot;)
+activity &lt;- read.csv(&quot;activity.csv&quot;, header=TRUE, sep=&quot;,&quot;, na.string=&quot;NA&quot;)</code></pre>
 </div>
 <div id="processtransform-the-data" class="section level4">
 <h4>2. Process/transform the data</h4>

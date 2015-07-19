@@ -6,6 +6,7 @@ library(knitr)
 ####1. Load the data
 
 ```r
+unzip("repdata_data_activity.zip")
 activity <- read.csv("activity.csv", header=TRUE, sep=",", na.string="NA")
 ```
 ####2. Process/transform the data

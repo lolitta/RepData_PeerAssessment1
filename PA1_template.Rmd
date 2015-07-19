@@ -10,6 +10,7 @@ library(knitr)
 ##Loading and preprocessing the data
 ####1. Load the data
 ```{r read_data, echo=TRUE}
+unzip("repdata_data_activity.zip")
 activity <- read.csv("activity.csv", header=TRUE, sep=",", na.string="NA")
 ```
 ####2. Process/transform the data
