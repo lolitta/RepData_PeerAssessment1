@@ -25,12 +25,10 @@ activity_Is_NA <- activity[is.na(activity$steps),]
 ####1. Histogram of the total number of steps taken each day
 ```{r}
 NumOfSteps <- aggregate(steps ~ date, activity_No_NA, sum)
-plot(NumOfSteps
-     , type="h"
-     , main ="Total no. of steps taken per day Oct-Nov 2012"
-     , xlab="Date"
-     , ylab="Number of steps")
  
+hist(NumOfSteps$steps
+     , main ="Total no. of steps taken per day Oct-Nov 2012"
+     , xlab="Number of steps")
 ```
 
 ####2.Calculate and report
@@ -81,11 +79,11 @@ activity2 <- rbind(activity_No_NA, activity_Is_NA)
 ####4. Make a histogram, calculate and report
 ```{r}
 NumOfSteps2 <- aggregate(steps ~ date, activity2, sum)
-plot(NumOfSteps2
-     , type="h"
+par(ps = 12, cex = 1, cex.main = 1)
+hist(NumOfSteps2$steps
      , main ="Total no of steps taken per day (missing data was filled with avg interval)"
-     , xlab="Date"
-     , ylab="Number of steps")
+     , xlab="Number of steps"
+     , col="light blue")
 
 MeanOfSteps2 <- as.integer(mean(NumOfSteps2$steps))
 MedianOfSteps2 <- as.integer(median(NumOfSteps2$steps))

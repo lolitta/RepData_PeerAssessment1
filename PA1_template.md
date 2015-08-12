@@ -22,11 +22,10 @@ activity_Is_NA <- activity[is.na(activity$steps),]
 
 ```r
 NumOfSteps <- aggregate(steps ~ date, activity_No_NA, sum)
-plot(NumOfSteps
-     , type="h"
+ 
+hist(NumOfSteps$steps
      , main ="Total no. of steps taken per day Oct-Nov 2012"
-     , xlab="Date"
-     , ylab="Number of steps")
+     , xlab="Number of steps")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
@@ -87,11 +86,11 @@ activity2 <- rbind(activity_No_NA, activity_Is_NA)
 
 ```r
 NumOfSteps2 <- aggregate(steps ~ date, activity2, sum)
-plot(NumOfSteps2
-     , type="h"
+par(ps = 12, cex = 1, cex.main = 1)
+hist(NumOfSteps2$steps
      , main ="Total no of steps taken per day (missing data was filled with avg interval)"
-     , xlab="Date"
-     , ylab="Number of steps")
+     , xlab="Number of steps"
+     , col="light blue")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
